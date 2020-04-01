@@ -1,0 +1,33 @@
+{
+  "name": "contact-tracing-portal",
+  "version": "1.0.0",
+  "description": "A portal to report test results for distributed contact tracing",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/distributed-contact-tracing/contact-tracing-portal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/distributed-contact-tracing/contact-tracing-portal/issues"
+  },
+  "homepage": "https://github.com/distributed-contact-tracing/contact-tracing-portal#readme",
+  "dependencies": {
+    "next": "^9.3.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/node": "^13.9.8",
+    "@types/react": "^16.9.31",
+    "typescript": "^3.8.3"
+  }
+}
