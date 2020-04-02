@@ -19,6 +19,29 @@ export const AuthorizeDataForm = () => {
     event.preventDefault();
     setStatus('signing');
 
+    const options = {
+      method: 'POST',
+      body: JSON.stringify({ personalNumber, appIdentifier }),
+    };
+
+    try {
+      const response = await fetch(
+        process.env.SERVER_URL + '/authorizeData',
+        options,
+      );
+
+      if (response.ok) {
+        if (formElement.current) {
+          formElement.current.reset();
+        }
+        setStatus('ready');
+      } else {
+        setStatus('ready');
+      }
+    } catch (error) {
+      console.error(error.name, error.message);
+      setStatus('ready');
+    }
   };
 
   return (
