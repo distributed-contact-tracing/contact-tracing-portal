@@ -74,7 +74,7 @@ export const AuthorizeDataForm = () => {
     <div
       className={props.visible ? 'awaiting-signing' : 'awaiting-signing hidden'}
     >
-      <p>Öppna appen BankID på din mobil för att signera.</p>
+      <p>Starta BankID-appen</p>
 
       <style jsx>{`
         .awaiting-signing {
