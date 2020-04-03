@@ -1,0 +1,30 @@
+language: node_js
+os: linux
+dist: trusty
+node_js:
+  - '10'
+
+cache: yarn
+
+script:
+  - yarn build
+
+before_deploy:
+  - yarn export
+  - AZ_REPO=$(lsb_release -cs)
+  - echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | sudo tee /etc/apt/sources.list.d/azure-cli.list
+  - curl -L https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+  - sudo apt-get update
+  - sudo apt-get install apt-transport-https azure-cli
+  - az login -u $AZ_LOGIN_NAME -p $AZ_PASSWORD --service-principal --tenant $AZ_TENANT > /dev/null 2>&1
+
+deploy:
+  provider: script
+  script: scripts/deploy_az_storage.sh
+  on:
+    branch: master
+
+notifications:
+  email: false
+  slack:
+    secure: zXq6ZRLBy6ZxclKBLO3QJCKblZ3mCwffTcQwtRWf4z2BEhicn23HJK/o8ZYLaBXbOAUkWWsOVah+sW76tT4O7d5KUCWGFYZpxVMWm8v7LurebRdBs3x7UyPEKtddC3U9qspUWtKncdi4LN0hYVp7DymBwqJgZJw3JBdg73En51dhhr9atSWFncdfWZX51TYm6MAsL05W8nX7V6mH/2ChaSeTKhlsdR0E17hU7HNEPqEbulSahq45uylMx+c4Qw1ux1l6r39ZGO++C6wrm/uxqvzEEtAYqnvWUXKH5kViAV/XdjqR42lCgt1STbDXUyRlMF92Nasjkfimh8Z2Ekoxe9/cVPZMzSbouKpA6cJlkl/WnsOXXcGcvxyQVXVszXVlCzTz36Kv89X4qZX2083Zw9Poi7SJ5n/ozlbxq6lH40WWQoLncra9Rp38GZCoBMGidRWW/yyf7jup+kb1isg1Eb+ZQSE47iBRmC4YoOrTuEW1Tiscr0z711ngT/nHBHYGjih0gQnl+tgqy6kDSfOX9wnzxtxipP3KfesPTlkKaTRoPCXl+PbkxmzKKut+YaFku8lDvjj6fLVvqMns35D0sQeUQXMdC6Q8zcIyVvP7XY3vW+eilhG8Tf1qU3MyVPOAllaTnHK305VukJJUQyEUVLkx2cQlAVg5Z4MB0i5u8YE=
