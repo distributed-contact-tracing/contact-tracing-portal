@@ -55,6 +55,29 @@ export const Layout = (props: LayoutProps) => {
           font-size: 2rem;
         }
 
+        a {
+          color: #26ade4;
+          text-decoration: none;
+          position: relative;
+        }
+
+        a::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: -.15em;
+          height: .15em;
+          overflow: hidden;
+          border-bottom: .15em solid #26ade4;
+          opacity: 0;
+          transition: all .1s ease-in-out;
+        }
+
+        a:hover::before {
+          opacity: 1;
+        }
+
         ::placeholder {
           font-size: 1rem;
           color: rgba(0, 0, 0, 0.25);
@@ -74,15 +97,22 @@ export const Layout = (props: LayoutProps) => {
           border-color: #26ade4;
         }
 
-        input[type=button], input[type=submit] {
+        input[type="button"], input[type="submit"] {
           color: #fff;
           background-color: #26ade4;
           border: 0;
           text-transform: uppercase;
           font-size: 0.8rem;
           font-weight: 600;
-          border-: 
+          transition: background-color 0.2s ease;
         }
+
+        input[type="button"]:hover, input[type="submit"]:hover {
+          background-color: #239dcf;
+          cursor: pointer;
+        }
+
+        
       `}</style>
     </div>
   );
