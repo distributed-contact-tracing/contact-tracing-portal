@@ -35,7 +35,7 @@ export const AuthorizeDataForm = () => {
 
     try {
       const response = await fetch(
-        process.env.SERVER_URL + '/authorizeData',
+        process.env.SERVER_URL + '/hcpAuthorizeData',
         options,
       );
 
