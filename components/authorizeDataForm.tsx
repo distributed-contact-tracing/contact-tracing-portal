@@ -36,7 +36,10 @@ export const AuthorizeDataForm = () => {
     try {
       const response = await fetch(
         process.env.SERVER_URL + '/hcpAuthorizeData',
-        options,
+        {
+          ...options,
+          mode: 'cors',
+        },
       );
 
       if (response.status === 200) {
