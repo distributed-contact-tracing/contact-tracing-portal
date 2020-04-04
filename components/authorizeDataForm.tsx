@@ -11,15 +11,15 @@ export const AuthorizeDataForm = () => {
 
   const [status, setStatus] = useState<'ready' | 'signing'>('ready');
   const [personalNumber, setPersonalNumber] = useState<string>('');
-  const [appIdentifier, setAppIdentifier] = useState<string>('');
+  const [infectedAppId, setInfectedAppId] = useState<string>('');
 
   const [message, setMessage] = useState<Message | undefined>(undefined);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.name === 'personalNumber') {
       setPersonalNumber(event.target.value);
-    } else if (event.target.name === 'appIdentifier') {
-      setAppIdentifier(event.target.value);
+    } else if (event.target.name === 'infectedAppId') {
+      setInfectedAppId(event.target.value);
     }
   };
 
@@ -30,7 +30,7 @@ export const AuthorizeDataForm = () => {
 
     const options = {
       method: 'POST',
-      body: JSON.stringify({ personalNumber, appIdentifier }),
+      body: JSON.stringify({ personalNumber, infectedAppId }),
     };
 
     try {
@@ -112,8 +112,9 @@ export const AuthorizeDataForm = () => {
   }) => {
     if (props.message && props.visible) {
       const classes = `messageBox 
-      ${(props.message.error ? 'error ' : '') +
-        (props.visible ? 'visible' : '')}`;
+      ${
+        (props.message.error ? 'error ' : '') + (props.visible ? 'visible' : '')
+      }`;
 
       return (
         <div className={classes}>
@@ -170,8 +171,8 @@ export const AuthorizeDataForm = () => {
       <input
         type="text"
         placeholder="Appens identifieringskod"
-        name="appIdentifier"
-        id="appIdentifier"
+        name="infectedAppId"
+        id="infectedAppId"
         onChange={handleInputChange}
       />
 
