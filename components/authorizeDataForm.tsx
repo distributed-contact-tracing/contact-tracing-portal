@@ -28,8 +28,12 @@ export const AuthorizeDataForm = () => {
     setStatus('signing');
     if (message) setMessage(undefined);
 
-    const options = {
+    const options: RequestInit = {
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      mode: 'cors',
       body: JSON.stringify({ personalNumber, infectedAppId }),
     };
 
