@@ -28,18 +28,19 @@ export const AuthorizeDataForm = () => {
     setStatus('signing');
     if (message) setMessage(undefined);
 
-    const options = {
+    const options: RequestInit = {
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      mode: 'cors',
       body: JSON.stringify({ personalNumber, infectedAppId }),
     };
 
     try {
       const response = await fetch(
         process.env.SERVER_URL + '/hcpAuthorizeData',
-        {
-          ...options,
-          mode: 'cors',
-        },
+        options,
       );
 
       if (response.status === 200) {
