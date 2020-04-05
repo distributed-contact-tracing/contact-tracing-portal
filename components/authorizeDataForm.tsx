@@ -209,6 +209,13 @@ export const AuthorizeDataForm = () => {
         input {
           margin-bottom: 0.5em;
         }
+
+        #personalNumber {
+          background-image: url('bankid_low_index.gif');
+          background-repeat: no-repeat;
+          background-position: 97% center;
+          background-size: auto 70%;
+        }
       `}</style>
     </form>
   );
