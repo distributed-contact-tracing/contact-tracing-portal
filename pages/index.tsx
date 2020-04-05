@@ -1,10 +1,18 @@
+import Head from 'next/head';
 import { Layout, AuthorizeDataForm } from '../components';
 
 const Home = () => (
   <Layout>
     <div className="container">
+      <Head>
+        <title>My Shared Air</title>
+      </Head>
       <div className="child left">
-        <h1>Distributed Contact Tracing</h1>
+        <h1>
+          My
+          <br />
+          Shared Air
+        </h1>
         <p>
           Här kan du som är legitimerad sjukvårdspersonal anmäla positiva
           provsvar på covid-19.
@@ -32,10 +40,13 @@ const Home = () => (
 
         .right {
           margin-left: 1rem;
+          padding: 1em;
+          background-color: #fff;
+          border-radius: 0.61em;
         }
 
         h1 {
-          max-width: 50%;
+          max-width: 80%;
           line-height: 1;
         }
       `}</style>

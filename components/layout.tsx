@@ -38,17 +38,18 @@ export const Layout = (props: LayoutProps) => {
 
         body {
           font-family: 'Source Sans Pro', sans-serif;
-          color: rgb(40, 45, 50);
+          color: #2e2e2e;
+          background-color: #f4f2eb;
           margin: 0;
           padding: 0;
-        }
-
-        h1, h2
-          color: rgba(0, 0, 0, 0.9);
+          background-image: url('/people.png');
+          background-position: right bottom;
+          background-repeat: no-repeat;
         }
 
         h1 {
-          font-size: 3rem;
+          color: #ff5454;
+          font-size: 4rem;
         }
 
         h2 {
@@ -56,7 +57,7 @@ export const Layout = (props: LayoutProps) => {
         }
 
         a {
-          color: #26ade4;
+          color: #4e86f1;
           text-decoration: none;
           position: relative;
         }
@@ -66,12 +67,12 @@ export const Layout = (props: LayoutProps) => {
           position: absolute;
           left: 0;
           right: 0;
-          bottom: -.15em;
-          height: .15em;
+          bottom: -0.15em;
+          height: 0.15em;
           overflow: hidden;
-          border-bottom: .15em solid #26ade4;
+          border-bottom: 0.15em solid #4e86f1;
           opacity: 0;
-          transition: all .1s ease-in-out;
+          transition: all 0.1s ease-in-out;
         }
 
         a:hover::before {
@@ -93,13 +94,15 @@ export const Layout = (props: LayoutProps) => {
           transition: 0.2s border-color;
         }
 
-        input:hover, input:focus {
-          border-color: #26ade4;
+        input:hover,
+        input:focus {
+          border-color: #4e86f1;
         }
 
-        input[type="button"], input[type="submit"] {
+        input[type='button'],
+        input[type='submit'] {
           color: #fff;
-          background-color: #26ade4;
+          background-color: #4e86f1;
           border: 0;
           text-transform: uppercase;
           font-size: 0.8rem;
@@ -107,12 +110,11 @@ export const Layout = (props: LayoutProps) => {
           transition: background-color 0.2s ease;
         }
 
-        input[type="button"]:hover, input[type="submit"]:hover {
-          background-color: #239dcf;
+        input[type='button']:hover,
+        input[type='submit']:hover {
+          background-color: #6495f1;
           cursor: pointer;
         }
-
-        
       `}</style>
     </div>
   );

@@ -164,6 +164,11 @@ export const AuthorizeDataForm = () => {
     >
       <MessageBox message={message} visible={typeof message !== undefined} />
 
+      <h3>
+        <img src="/outline_assignment_black_18dp.png" className="reportIcon" />{' '}
+        Anmäl positivt provsvar
+      </h3>
+
       <input
         type="text"
         placeholder="Ditt personnummer"
@@ -174,7 +179,7 @@ export const AuthorizeDataForm = () => {
 
       <input
         type="text"
-        placeholder="Appens identifieringskod"
+        placeholder="Den smittade personens app-kod"
         name="infectedAppId"
         id="infectedAppId"
         onChange={handleInputChange}
@@ -191,8 +196,25 @@ export const AuthorizeDataForm = () => {
           position: relative;
         }
 
+        h3 {
+          margin-top: 0;
+        }
+
+        .reportIcon {
+          height: 1.5em;
+          margin-right: 0.4em;
+          transform: translateY(0.3em);
+        }
+
         input {
           margin-bottom: 0.5em;
+        }
+
+        #personalNumber {
+          background-image: url('bankid_low_index.gif');
+          background-repeat: no-repeat;
+          background-position: 97% center;
+          background-size: auto 70%;
         }
       `}</style>
     </form>
