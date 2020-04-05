@@ -162,12 +162,12 @@ export const AuthorizeDataForm = () => {
       ref={formElement}
       onSubmit={handleFormSubmit}
     >
-      <MessageBox message={message} visible={typeof message !== undefined} />
-
       <h3>
         <img src="/outline_assignment_black_18dp.png" className="reportIcon" />{' '}
         Anmäl positivt provsvar
       </h3>
+
+      <MessageBox message={message} visible={typeof message !== undefined} />
 
       <input
         type="text"
