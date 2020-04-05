@@ -179,7 +179,7 @@ export const AuthorizeDataForm = () => {
 
       <input
         type="text"
-        placeholder="Appens identifieringskod"
+        placeholder="Den smittade personens app-kod"
         name="infectedAppId"
         id="infectedAppId"
         onChange={handleInputChange}
