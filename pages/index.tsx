@@ -1,8 +1,12 @@
+import Head from 'next/head';
 import { Layout, AuthorizeDataForm } from '../components';
 
 const Home = () => (
   <Layout>
     <div className="container">
+      <Head>
+        <title>My Shared Air</title>
+      </Head>
       <div className="child left">
         <h1>
           My
