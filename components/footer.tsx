@@ -1,6 +1,6 @@
 export const Footer = () => (
   <footer>
-    Distributed Contact Tracing
+    My Shared Air
     <style jsx>{`
       footer {
         text-align: center;

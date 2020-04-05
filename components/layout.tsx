@@ -46,7 +46,7 @@ export const Layout = (props: LayoutProps) => {
 
         h1 {
           color: #ff5454;
-          font-size: 3rem;
+          font-size: 4rem;
         }
 
         h2 {

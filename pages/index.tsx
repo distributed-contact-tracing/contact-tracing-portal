@@ -4,7 +4,11 @@ const Home = () => (
   <Layout>
     <div className="container">
       <div className="child left">
-        <h1>Distributed Contact Tracing</h1>
+        <h1>
+          My
+          <br />
+          Shared Air
+        </h1>
         <p>
           Här kan du som är legitimerad sjukvårdspersonal anmäla positiva
           provsvar på covid-19.
