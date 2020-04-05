@@ -42,6 +42,9 @@ export const Layout = (props: LayoutProps) => {
           background-color: #f4f2eb;
           margin: 0;
           padding: 0;
+          background-image: url('/people.png');
+          background-position: right bottom;
+          background-repeat: no-repeat;
         }
 
         h1 {
