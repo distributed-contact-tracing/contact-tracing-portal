@@ -32,6 +32,9 @@ const Home = () => (
 
         .right {
           margin-left: 1rem;
+          padding: 1em;
+          background-color: #fff;
+          border-radius: 0.61em;
         }
 
         h1 {
